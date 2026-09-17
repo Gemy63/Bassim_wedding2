@@ -602,10 +602,12 @@ button,a{
 .seal b{
     position:relative;
     z-index:2;
-    font:700 22px "Cormorant Garamond",serif;
+    font:700 28px "Cormorant Garamond",serif;
     color:#3d2604;
-    letter-spacing:1.5px;
-    text-shadow: -1px -1px 1px rgba(255,255,255,.35), 1.5px 1.5px 2px rgba(0,0,0,.75);
+    letter-spacing:2px;
+    line-height:1;
+    transform:scale(1.08);
+    text-shadow:-1px -1px 1px rgba(255,255,255,.35), 1.5px 1.5px 2px rgba(0,0,0,.75);
 }
 
 .envelope.breaking .seal{
@@ -901,10 +903,12 @@ button,a{
 ===================================================== */
 
 .verse{
-    font:400 clamp(12px,3vw,14px)/1.55 Amiri,serif;
+    font:400 clamp(9.2px,2.55vw,14px)/1.45 Amiri,serif;
     color:#52403b;
-    padding:4px 8px 5px;
+    padding:4px 2px 5px;
     border-bottom:1px solid rgba(184,145,69,.27);
+    white-space:nowrap;
+    letter-spacing:-.15px;
 }
 
 .verse small{
@@ -1086,6 +1090,7 @@ button,a{
     grid-template-columns:repeat(4,1fr);
     gap:5px;
     margin:2px 3px 0;
+    direction:ltr;
 }
 
 .time{
@@ -1230,7 +1235,9 @@ button,a{
     }
 
     .verse{
-        font-size:12.6px;
+        font-size:clamp(9px,2.45vw,12.6px);
+        padding-left:0;
+        padding-right:0;
     }
 
     .bismillah{
@@ -1278,7 +1285,8 @@ button,a{
     }
 
     .seal b{
-        font-size:19px;
+        font-size:24px;
+        letter-spacing:1.7px;
     }
 
     .card{
@@ -1287,7 +1295,9 @@ button,a{
     }
 
     .verse{
-        font-size:12px;
+        font-size:clamp(8.8px,2.35vw,12px);
+        padding-left:0;
+        padding-right:0;
     }
 
     .invite-line{
@@ -1361,7 +1371,7 @@ button,a{
 
                 <div class="seal-wrap" id="sealWrap">
                     <div class="seal">
-                        <b>B &amp; M</b>
+                        <b>B&amp;M</b>
                     </div>
                 </div>
 
@@ -1532,7 +1542,7 @@ button,a{
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <span>⌖</span>
+                        <span>➢</span>
                         موقع القاعة
                     </a>
 
