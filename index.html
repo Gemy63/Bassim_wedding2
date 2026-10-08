@@ -543,7 +543,7 @@ button,a{
 }
 
 /* =====================================================
-   REALISTIC WAX SEAL (ختم شمعي واقعي مجسم)
+   REALISTIC WAX SEAL
 ===================================================== */
 
 .seal-wrap{
@@ -559,7 +559,7 @@ button,a{
     position:relative;
     width:88px;
     height:88px;
-    border-radius: 48% 52% 49% 51% / 51% 48% 52% 49%;
+    border-radius:48% 52% 49% 51% / 51% 48% 52% 49%;
     display:grid;
     place-items:center;
 
@@ -594,9 +594,9 @@ button,a{
     content:"";
     position:absolute;
     inset:6px;
-    border-radius: 49% 51% 50% 50% / 50% 49% 51% 50%;
-    border: 1.5px solid rgba(70,44,7,.6);
-    box-shadow: inset 1px 1.5px 3px rgba(0,0,0,.45), 0 1px 1px rgba(255,255,255,.35);
+    border-radius:49% 51% 50% 50% / 50% 49% 51% 50%;
+    border:1.5px solid rgba(70,44,7,.6);
+    box-shadow:inset 1px 1.5px 3px rgba(0,0,0,.45), 0 1px 1px rgba(255,255,255,.35);
 }
 
 .seal b{
@@ -790,7 +790,9 @@ button,a{
     transform:none;
 }
 
-/* card */
+/* =====================================================
+   CARD
+===================================================== */
 
 .card{
     position:relative;
@@ -812,7 +814,6 @@ button,a{
         inset 0 0 0 7px rgba(255,255,255,.58);
 }
 
-/* فيديو خلفية الكارت */
 .card-bg-video{
     position:absolute;
     inset:0;
@@ -824,7 +825,6 @@ button,a{
     filter:brightness(1.05) contrast(1.02);
 }
 
-/* طبقة تظليل تضمن وضوح الكلام ودمج ألوان الفيديو */
 .card-overlay{
     position:absolute;
     inset:0;
@@ -929,10 +929,43 @@ button,a{
     color:#9f7632;
 }
 
+/* =====================================================
+   HOSTS
+===================================================== */
+
 .invite-line{
-    font:400 17px Amiri,serif;
+    font:400 16px Amiri,serif;
     color:#5d4244;
-    margin-top:0;
+    margin-top:1px;
+    line-height:1.25;
+}
+
+.hosts-line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px; /* التحكم في المسافة بين الدكتور حاتم والحاج رياض */
+    margin-top: 2px;
+    padding: 0 15px;
+}
+
+.host{
+    font: 700 13px Amiri, serif;
+    color: #6e4b48;
+    white-space: nowrap;
+}
+
+.host.right{
+    text-align:right;
+}
+
+.host.left{
+    text-align:left;
+}
+
+.host-prefix{
+    font-weight:400;
+    color:#9a7438;
 }
 
 .orn{
@@ -984,6 +1017,26 @@ button,a{
     font-size:9px;
     color:#997e57;
     margin-top:2px;
+}
+
+.name-row{
+    position:relative;
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    width:100%;
+    min-height:41px;
+}
+
+.relation{
+    position:absolute;
+    right:18%;
+    top:50%;
+    transform:translateY(-50%);
+    display:inline-block;
+    font-size:9px;
+    color:#997e57;
+    white-space:nowrap;
 }
 
 .name{
@@ -1249,11 +1302,24 @@ button,a{
     }
 
     .invite-line{
-        font-size:18px;
+        font-size:16px;
+    }
+
+    .hosts-line{
+        padding:0 4px;
+    }
+
+    .host{
+        font-size:12px;
     }
 
     .name{
         font-size:32px;
+    }
+
+    .relation{
+        right:16%;
+        font-size:8.5px;
     }
 
     .detail{
@@ -1301,11 +1367,25 @@ button,a{
     }
 
     .invite-line{
-        font-size:17px;
+        font-size:15px;
+    }
+
+    .host{
+        font-size:11px;
+    }
+
+    .hosts-line{
+        padding:0;
+        column-gap:4px;
     }
 
     .name{
         font-size:29px;
+    }
+
+    .relation{
+        right:9%;
+        font-size:8px;
     }
 
     .detail strong{
@@ -1364,7 +1444,6 @@ button,a{
                 <div class="fold fold-right"></div>
                 <div class="fold fold-bottom"></div>
 
-                <!-- إطار الظرف الكامل العابر فوق الطيات -->
                 <div class="env-frame"></div>
 
                 <div class="flap"></div>
@@ -1435,7 +1514,27 @@ button,a{
 
                     <div class="love">بِكُلِّ الحُبِّ</div>
 
-                    <div class="invite-line">نتشرف بدعوة حضراتكم</div>
+                    <div class="invite-line">
+                        يتشرف
+                    </div>
+
+                    <div class="hosts-line">
+
+                        <div class="host right">
+                            <span class="host-prefix">دكتور/</span>
+                            حاتم خضر
+                        </div>
+
+                        <div class="host left">
+                            <span class="host-prefix">الحاج/</span>
+                            رياض عزب
+                        </div>
+
+                    </div>
+
+                    <div class="invite-line">
+                        بدعوتكم
+                    </div>
 
                     <div class="orn">
                         <span></span>
@@ -1448,10 +1547,14 @@ button,a{
                 <!-- NAMES -->
                 <div>
 
-                    <div class="names-title">لحضور حفل زفاف</div>
+                    <div class="names-title">لعقد قران وزفاف</div>
 
                     <span class="profession">المهندس</span>
-                    <div class="name">باسم</div>
+
+                    <div class="name-row">
+                        <div class="name">باسم</div>
+                        <span class="relation">نجل الأول</span>
+                    </div>
 
                     <div class="heartline">
                         <span></span>
@@ -1460,7 +1563,11 @@ button,a{
                     </div>
 
                     <span class="profession">المهندسة</span>
-                    <div class="name">مها</div>
+
+                    <div class="name-row">
+                        <div class="name">مها</div>
+                        <span class="relation">كريمة الثاني</span>
+                    </div>
 
                 </div>
 
@@ -1604,12 +1711,6 @@ let opened = false;
 
 /* =====================================================
    iOS AUDIO UNLOCK
-   الآيفون بيمنع تشغيل الصوت لحد ما يحصل تفاعل حقيقي
-   من المستخدم، وأحياناً أول لمسة (تاتش) مش كافية لوحدها
-   عشان تفتح "قناة الصوت" قبل ما نطلب التشغيل الفعلي.
-   الكود ده بيفتح القناة فور أول لمسة/كليك في أي مكان
-   بالصفحة (قبل ما نلمس الختم نفسه)، فيضمن إن الصوت
-   يشتغل عادي لما نطلب تشغيله بعدها.
 ===================================================== */
 
 let audioUnlocked = false;
@@ -1641,23 +1742,18 @@ function openInvitation(){
     if(opened) return;
     opened = true;
 
-    /* 1 — كسر الختم */
     envelope.classList.add("breaking");
 
-    /* 2 — الموسيقى */
     playMusic();
 
-    /* 3 — بداية فتح الغطاء */
     setTimeout(()=>{
         envelope.classList.add("open");
     },280);
 
-    /* 4 — اندفاع بسيط من البتلات */
     for(let i=0;i<18;i++){
         setTimeout(createPetal, i*48);
     }
 
-    /* 5 — بعد خروج الورقة يظهر الكارت */
     setTimeout(()=>{
         intro.classList.add("hide");
         invitation.classList.add("show");
@@ -1700,11 +1796,6 @@ function playMusic(){
     music.play()
         .then(startFade)
         .catch(()=>{
-
-            /* لو التشغيل فشل (بيحصل أحياناً في السفاري على
-               الآيفون من أول مرة)، بنعيد المحاولة تلقائياً
-               مع أول لمسة/كليك تاني من المستخدم بدل ما
-               الصوت يفضل واقف للأبد */
 
             const retryPlay = ()=>{
                 music.currentTime = 0;
